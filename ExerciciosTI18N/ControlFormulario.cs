@@ -84,6 +84,12 @@ namespace ExerciciosTI18N
                         //Comparação
                         Console.WriteLine("O maior número é: " + exercicio.Comparar(num1, num2));
                         break;
+                    case 3:
+                        Console.WriteLine("Informe um número: ");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        //Mostrar o resultado
+                        Console.WriteLine("O Antecessor é: " + exercicio.Antecessor(num));
+                        break;
                     default:
                         Console.WriteLine("Opção escolhida não é válida!");
                         break;

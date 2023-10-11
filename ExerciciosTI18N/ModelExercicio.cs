@@ -44,5 +44,15 @@ namespace ExerciciosTI18N
                 return num2;
             }
         }//fim do comparar
+
+        //Exercício 03 - Mostrar o antecessor
+        public int Antecessor(int num)
+        {
+            return num - 1;
+        }//fim do antecessor
+
+
+
+
     }//fim da classe
 }//fim do projeto
