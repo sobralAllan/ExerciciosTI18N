@@ -31,6 +31,8 @@ namespace ExerciciosTI18N
                               "1. Exercício 01\n" +
                               "2. Exercício 02\n" +
                               "3. Exercício 03\n" +
+                              "4. Exercício 04\n" +
+                              "5. Exercício 05\n" +
                               "Escolha uma das opções acima: ");
             ConsultarOpcao = Convert.ToInt32(Console.ReadLine());
         }//mostrar menu
@@ -89,6 +91,89 @@ namespace ExerciciosTI18N
                         int num = Convert.ToInt32(Console.ReadLine());
                         //Mostrar o resultado
                         Console.WriteLine("O Antecessor é: " + exercicio.Antecessor(num));
+                        break;
+                    case 4:
+                        double bas;
+                        double alt;
+                        do {
+                            Console.WriteLine("Informe a base do retângulo: ");
+                            bas = Convert.ToDouble(Console.ReadLine());
+                            if(bas < 0)
+                            {
+                                Console.WriteLine("Erro! Informe um valor positivo!");
+                            }
+                        } while (bas < 0);
+
+                        do
+                        {
+                            Console.WriteLine("Informe a altura do retângulo: ");
+                            alt = Convert.ToDouble(Console.ReadLine());
+                            if(alt < 0)
+                            {
+                                Console.WriteLine("Erro! Informe um valor positivo");
+                            }
+                        } while (alt < 0);
+                        //Mostrar a mensagem na tela
+                        Console.WriteLine("A área do retângulo é: " + exercicio.AreaRetangulo(bas, alt));
+                        break;
+                    case 5:
+                        double totalEleitores;
+                        double validos;
+                        double nulos;
+                        double brancos;
+                        //Total de Eleitores
+                        do
+                        {
+                            Console.WriteLine("Informe o total de eleitores");
+                            totalEleitores = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(totalEleitores) == false)
+                            {
+                                Console.WriteLine("Informe um valor positivo!");
+                            }
+                        } while (exercicio.Validar(totalEleitores) == false);
+                        //Votos Brancos
+                        do
+                        {
+                            Console.WriteLine("Informe o total de votos brancos");
+                            brancos = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(brancos) == false)
+                            {
+                                Console.WriteLine("Informe um valor positivo!");
+                            }
+                        } while (exercicio.Validar(brancos) == false);
+                        //Votos Validos
+                        do
+                        {
+                            Console.WriteLine("Informe o total de votos válidos");
+                            validos = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(validos) == false)
+                            {
+                                Console.WriteLine("Informe um valor positivo!");
+                            }
+                        } while (exercicio.Validar(validos) == false);
+                        //Total de nulos
+                        do
+                        {
+                            Console.WriteLine("Informe o total de votos nulos");
+                            nulos = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(nulos) == false)
+                            {
+                                Console.WriteLine("Informe um valor positivo!");
+                            }
+                        } while (exercicio.Validar(nulos) == false);
+
+                        //Fazer o cálculo
+                        if(brancos + validos + nulos == totalEleitores)
+                        {
+                            Console.WriteLine("\nHá " + exercicio.PorcentagemVotos(brancos, totalEleitores) + "% de votos brancos" 
+                                            + "\nHá " + exercicio.PorcentagemVotos(nulos, totalEleitores)   + "% de votos nulos"
+                                            + "\nHá " + exercicio.PorcentagemVotos(validos, totalEleitores) + "% de votos validos");
+                        }
+                        else
+                        {
+                            Console.WriteLine("O total de eleitores é diferente da soma de brancos, validos e nulos.");
+                        }
+
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não é válida!");

@@ -51,6 +51,28 @@ namespace ExerciciosTI18N
             return num - 1;
         }//fim do antecessor
 
+        public double AreaRetangulo(double bas, double alt)
+        {
+            return bas * alt;
+        }//fim do método
+
+        public double PorcentagemVotos(double votos, double total)
+        {
+            return (votos * 100) / total;
+        }//fim do método de porcentagem
+
+        public Boolean Validar(double num)
+        {
+            if (num < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }//fim da validação
+
 
 
 
