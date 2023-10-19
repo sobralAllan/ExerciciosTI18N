@@ -73,6 +73,15 @@ namespace ExerciciosTI18N
             }
         }//fim da validação
 
+        public double AjusteSalario(double salario, double reajuste)
+        {
+            return salario * (reajuste / 100) + salario;
+        }//fim do método
+
+        public double CustoFinal(double porc, double custInicial)
+        {
+            return custInicial * (porc / 100);
+        }//fim do método
 
 
 

@@ -33,6 +33,8 @@ namespace ExerciciosTI18N
                               "3. Exercício 03\n" +
                               "4. Exercício 04\n" +
                               "5. Exercício 05\n" +
+                              "6. Exercício 06\n" +
+                              "7. Exercício 07\n" +
                               "Escolha uma das opções acima: ");
             ConsultarOpcao = Convert.ToInt32(Console.ReadLine());
         }//mostrar menu
@@ -174,6 +176,71 @@ namespace ExerciciosTI18N
                             Console.WriteLine("O total de eleitores é diferente da soma de brancos, validos e nulos.");
                         }
 
+                        break;
+                    case 6:
+                        double salario;
+                        double reajuste;
+                        do
+                        {
+                            Console.WriteLine("Informe o Salário: ");
+                            salario = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(salario) == false)
+                            {
+                                Console.WriteLine("Informe um salário positivo!");
+                            }//fim da validação
+                        } while (exercicio.Validar(salario) == false);
+
+                        do
+                        {
+                            Console.WriteLine("Informe o percentual de reajuste: ");
+                            reajuste = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(reajuste) == false)
+                            {
+                                Console.WriteLine("Informe um reajuste positivo!");
+                            }//fim da validação
+                        } while(exercicio.Validar(reajuste) == false);
+
+                        Console.WriteLine("O novo salário é: " + exercicio.AjusteSalario(salario, reajuste));
+                        break;
+                    case 7:
+                        double custInicial = 0;
+                        double imp = 0;
+                        double dist = 0;
+                        do
+                        {
+                            Console.WriteLine("Informe o custo inicial: ");
+                            custInicial = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(custInicial) == false)
+                            {
+                                Console.WriteLine("Informe um valor positivo!");
+                            }
+                        } while (exercicio.Validar(custInicial) == false);
+
+                        do
+                        {
+                            Console.WriteLine("Informe o percentual de impostos: ");
+                            imp = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(imp) == false)
+                            {
+                                Console.WriteLine("Informe um valor positivo!");
+                            }
+                        } while (exercicio.Validar(imp) == false);
+
+                        do
+                        {
+                            Console.WriteLine("Informe o percentual do distribuidor: ");
+                            dist = Convert.ToDouble(Console.ReadLine());
+                            if (exercicio.Validar(dist) == false)
+                            {
+                                Console.WriteLine("Informe um valor positivo!");
+                            }
+                        } while (exercicio.Validar(dist) == false);
+
+                        //Mostrar
+                        Console.WriteLine("O Custo final é: R$ " +
+                            (exercicio.CustoFinal(imp, custInicial) +
+                            exercicio.CustoFinal(dist, custInicial) +
+                            custInicial));
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não é válida!");
